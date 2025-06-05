@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var userName = prompt("Nhập tên đăng nhập:");
+      if (userName === "admin") {
+        var password = prompt("Nhập mật khẩu:");
+        if (password === "TheMaster") {
+          alert("Welcome");
+        } else if (password === null) {
+          alert("Canceled");
+        } else {
+          alert("Wrong password");
+        }
+      } else if (userName === null) {
+        alert("Canceled");
+      } else {
+        alert("I don't know you");
+      }
+    </script>
+  </body>
+</html>
