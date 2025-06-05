@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <table>
+        <tr style="text-align: center">
+          <td>Amount</td>
+          <td>From Curency</td>
+          <td>To Curency</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="number" /></td>
+          <td m>
+            <select name="fromCurency" id="a">
+              <option value="USD" selected>USD</option>
+              <option value="VND">VND</option>
+            </select>
+          </td>
+          <td>
+            <select name="toCurency" id="b" style="margin-left: 20px">
+              <option value="VND" selected>VND</option>
+              <option value="USD">USD</option>
+            </select>
+          </td>
+          <td>
+            <!-- <button onclick="convert()">Convert</button> -->
+            <input type="submit" value="Convert" onclick="convert(event)" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <p id="result">Result:</p>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function convert(event) {
+        event.preventDefault();
+        var amount = document.getElementById("number").value;
+        var fromCurency = document.getElementById("a").value;
+        var toCurency = document.getElementById("b").value;
+        var result = 0;
+
+        if (fromCurency === "USD" && toCurency === "VND") {
+          result = amount * 23000;
+        } else if (fromCurency === "VND" && toCurency === "USD") {
+          result = amount / 23000;
+        } else {
+          result = amount;
+        }
+        var resultCell = (document.getElementById("result").innerHTML =
+          "Result: " + result);
+      }
+    </script>
+  </body>
+</html>
