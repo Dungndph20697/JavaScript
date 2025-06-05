@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy tính</title>
+    <style>
+      td button {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-top: 20px">
+      <table>
+        <tr>
+          <td colspan="7">
+            <input type="text" id="number" style="width: 98%; height: 30px" />
+          </td>
+        </tr>
+        <tr>
+          <td><button onclick="bam()">Rad</button></td>
+          <td><button onclick="bam()"></button></td>
+          <td><button onclick="bam()">x!</button></td>
+          <td><button onclick="bam()">(</button></td>
+          <td><button onclick="bam()">)</button></td>
+          <td><button onclick="bam('%')">%</button></td>
+          <td><button onclick="bam('ac')">AC</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="bam()">Inv</button></td>
+          <td><button onclick="bam()">sin</button></td>
+          <td><button onclick="bam()">In</button></td>
+          <td><button onclick="bam('7')">7</button></td>
+          <td><button onclick="bam('8')">8</button></td>
+          <td><button onclick="bam('9')">9</button></td>
+          <td><button onclick="bam('%')">%</button></td>
+        </tr>
+
+        <tr>
+          <td><button onclick="bam()">π</button></td>
+          <td><button onclick="bam()">cos</button></td>
+          <td><button onclick="bam()">log</button></td>
+          <td><button onclick="bam('4')">4</button></td>
+          <td><button onclick="bam('5')">5</button></td>
+          <td><button onclick="bam('6')">6</button></td>
+          <td><button onclick="bam('*')">x</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="bam()">e</button></td>
+          <td><button onclick="bam()">tan</button></td>
+          <td><button onclick="bam()"></button></td>
+          <td><button onclick="bam('1')">1</button></td>
+          <td><button onclick="bam('2')">2</button></td>
+          <td><button onclick="bam('3')">3</button></td>
+          <td><button onclick="bam('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="bam()">Ans</button></td>
+          <td><button onclick="bam()">EXP</button></td>
+          <td>
+            <button onclick="bam()">x<sup>y</sup></button>
+          </td>
+          <td><button onclick="bam('0')">0</button></td>
+          <td><button onclick="bam()">.</button></td>
+          <td><button onclick="bam('=')">=</button></td>
+          <td><button onclick="bam('+')">+</button></td>
+        </tr>
+      </table>
+    </div>
+    <!-- <p id="result">Result Division:</p> -->
+    <script>
+      function bam(x) {
+        if (x === "ac") {
+          document.getElementById("number").value = "";
+        } else if (x != "=") {
+          document.getElementById("number").value += x;
+        } else {
+          document.getElementById("number").value = eval(
+            document.getElementById("number").value
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
