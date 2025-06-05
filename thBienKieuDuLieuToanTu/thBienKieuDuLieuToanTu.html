@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="bai1()">Bài 1</button>
+    <button onclick="bai2()">Bài 2</button>
+    <button onclick="bai3()">Bài 3</button>
+    <button onclick="bai4()">Bài 4</button>
+    <script>
+      //bài 1
+      function bai1() {
+        var diemVatLy = parseFloat(prompt("Nhập điểm Vật Lý:"));
+        var diemHoaHoc = parseFloat(prompt("Nhập điểm Hóa Học:"));
+        var diemSinhHoc = parseFloat(prompt("Nhập điểm Sinh Học:"));
+        alert(
+          "Điểm trung bình của bạn là: " +
+            (diemVatLy + diemHoaHoc + diemSinhHoc) / 3
+        );
+        alert(
+          "Tổng điểm của bạn là: " + (diemVatLy + diemHoaHoc + diemSinhHoc)
+        );
+      }
+
+      //bài 2
+      function bai2() {
+        var doC = parseInt(prompt("Nhập nhiệt độ theo độ C (0-100):"));
+        alert("Nhiệt độ theo độ F là: " + (doC * 9) / 5 + 32);
+      }
+
+      function bai3() {
+        var banKinh = parseFloat(prompt("Nhập bán kính hình tròn:"));
+        var dienTich = Math.PI * Math.pow(banKinh, 2);
+        alert("Diện tích hình tròn là: " + dienTich);
+      }
+
+      function bai4() {
+        var banKinh = parseFloat(prompt("Nhập bán kính hình tròn:"));
+        var chuVi = 2 * Math.PI * banKinh;
+        alert("Chu vi hình tròn là: " + chuVi);
+      }
+    </script>
+  </body>
+</html>
