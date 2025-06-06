@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="https://james.codegym.vn/pluginfile.php/64921/mod_assign/intro/1.png"
+      style="width: 30%"
+      id="img"
+    />
+    <button onclick="moveLeft()"><</button>
+    <button onclick="moveRight()">></button>
+    <script>
+      var objImg = document.getElementById("img");
+      function init() {
+        objImg.style.position = "relative";
+        objImg.style.left = "0px";
+      }
+      function moveLeft() {
+        objImg.style.left = parseInt(objImg.style.left) - 10 + "px";
+      }
+      function moveRight() {
+        objImg.style.left = parseInt(objImg.style.left) + 10 + "px";
+      }
+      window.onload = init;
+    </script>
+  </body>
+</html>
