@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Do you love me?</h1>
+    <button onclick="buttonYes()">Yes</button>
+    <button id="btnNo" onmouseover="buttonNo()">No</button>
+    <script>
+      function buttonYes() {
+        alert("I love you too!");
+      }
+      function buttonYes() {
+        alert("I love you too!");
+      }
+      function buttonNo() {
+        const btnNo = document.getElementById("btnNo");
+        const randomX = Math.floor(Math.random() * window.innerWidth);
+        const randomY = Math.floor(Math.random() * window.innerHeight);
+        btnNo.style.position = "absolute";
+        btnNo.style.left = randomX + "px";
+        btnNo.style.top = randomY + "px";
+      }
+    </script>
+  </body>
+</html>
