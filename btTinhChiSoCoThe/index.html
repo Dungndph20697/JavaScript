@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="txtSo1" placeholder="Nhập cân nặng (kg)" />
+    <input type="text" id="txtSo2" placeholder="Nhập chiều cao (m)" />
+    <button onclick="tinhChiSoCoThe()">Tính chỉ số cơ thể</button>
+    <p id="bmi"></p>
+    <p id="result"></p>
+    <script>
+      function tinhChiSoCoThe() {
+        var so1 = parseFloat(document.getElementById("txtSo1").value);
+        var so2 = parseFloat(document.getElementById("txtSo2").value);
+        if (isNaN(so1) || isNaN(so2) || so2 <= 0) {
+          alert("Vui lòng nhập cân nặng và chiều cao hợp lệ.");
+          return;
+        }
+        var chiSoCoThe = so1 / (so2 * so2);
+
+        document.getElementById("bmi").innerText = "Chỉ số BMI: " + chiSoCoThe;
+        if (chiSoCoThe < 18.5) {
+          document.getElementById("result").innerText = "Bạn đang thiếu cân.";
+        } else if (chiSoCoThe < 25.0) {
+          document.getElementById("result").innerText =
+            "Bạn có cân nặng bình thường.";
+        } else if (chiSoCoThe < 30.0) {
+          document.getElementById("result").innerText = "Bạn đang thừa cân.";
+        } else {
+          document.getElementById("result").innerText = "Bạn bị béo phì.";
+        }
+      }
+    </script>
+  </body>
+</html>
