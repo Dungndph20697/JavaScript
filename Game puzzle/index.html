@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="clickme(1)">
+      <img id="img1" src="./img/panda_swap_part1x1.jpg" /></button
+    ><br />
+    <button onclick="clickme(2)">
+      <img id="img2" src="./img/funny-cat1_part2x1.jpg" /></button
+    ><br />
+    <button onclick="clickme(3)">
+      <img id="img3" src="./img/panda_swap_part3x1.jpg" /></button
+    ><br />
+    <button onclick="clickme(4)">
+      <img id="img4" src="./img/monkey_part4x1.jpg" /></button
+    ><br />
+    <button onclick="clickme(5)">
+      <img id="img5" src="./img/funny-cat1_part5x1.jpg" />
+    </button>
+    <script>
+      var i = 0;
+      function clickme(x) {
+        i++;
+        if (i > 2) {
+          i = 0;
+        }
+        var img = document.getElementById("img" + x);
+        var images1 = [
+          "./img/panda_swap_part1x1.jpg",
+          "./img/funny-cat1_part1x1.jpg",
+          "./img/monkey_part1x1.jpg",
+        ];
+        var images2 = [
+          "./img/panda_swap_part2x1.jpg",
+          "./img/funny-cat1_part2x1.jpg",
+          "./img/monkey_part2x1.jpg",
+        ];
+        var images3 = [
+          "./img/panda_swap_part3x1.jpg",
+          "./img/funny-cat1_part3x1.jpg",
+          "./img/monkey_part3x1.jpg",
+        ];
+        var images4 = [
+          "./img/panda_swap_part4x1.jpg",
+          "./img/funny-cat1_part4x1.jpg",
+          "./img/monkey_part4x1.jpg",
+        ];
+        var images5 = [
+          "./img/panda_swap_part5x1.jpg",
+          "./img/funny-cat1_part5x1.jpg",
+          "./img/monkey_part5x1.jpg",
+        ];
+
+        if (x === 1) {
+          img.src = images1[i];
+        } else if (x === 2) {
+          img.src = images2[i];
+        } else if (x === 3) {
+          img.src = images3[i];
+        } else if (x === 4) {
+          img.src = images4[i];
+        } else {
+          img.src = images5[i];
+        }
+      }
+    </script>
+  </body>
+</html>
