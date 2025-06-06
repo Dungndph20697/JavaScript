@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <button onclick="bai1()">bài 1</button>
+    <button onclick="bai2()">bài 2</button>
+    <button onclick="bai3()">bài 3</button>
+    <button onclick="bai4()">bài 4</button>
+    <button onclick="bai5()">bài 5</button>
+    <button onclick="bai6()">bài 6</button>
+    <button onclick="bai7()">bài 7</button>
+    <script>
+      function bai1() {
+        let a = parseInt(prompt("Nhập vào số a"));
+        let b = parseInt(prompt("Nhập vào số b"));
+        if (a % b == 2) {
+          alert(a + " chia hết cho " + b);
+        } else {
+          alert(a + " không không chia hết " + b);
+        }
+      }
+      function bai2() {
+        let tuoi = parseInt(prompt("Nhập vào tuổi của bạn"));
+        if (tuoi < 16) {
+          alert("bạn không đủ tuổi học hớp 10");
+        } else {
+          alert("bạn đủ tuổi học lớp 10");
+        }
+      }
+      function bai3() {
+        let a = parseInt(prompt("Nhập vào một số bất kỳ"));
+        if (a < 0) {
+          alert(a + " nhỏ hơn 0");
+        } else if (a == 0) {
+          alert(a + " bằng không");
+        } else {
+          alert(a + " lớn hơn 0");
+        }
+      }
+      function bai4() {
+        let a = parseInt(prompt("Nhập vào số thứ nhất"));
+        let b = parseInt(prompt("Nhập vào số thứ hai"));
+        let c = parseInt(prompt("Nhập vào số thứ ba"));
+        let result = 0;
+        if (a > b) {
+          if (a > c) {
+            result = a;
+          } else {
+            result = c;
+          }
+        } else {
+          if (b > c) {
+            result = b;
+          } else {
+            result = c;
+          }
+        }
+        alert("Số lớn nhất là: " + result);
+      }
+      function bai5() {
+        let diemKT = parseFloat(prompt("Nhập vào điểm kiểm tra"));
+        let diemThiGiuaKy = parseFloat(prompt("Nhập vào điểm thi giữa kỳ"));
+        let diemThiCuoiKy = parseFloat(prompt("Nhập vào điểm thi cuối kỳ"));
+        let diemTrungBinh =
+          (diemKT * 1 + diemThiGiuaKy * 2 + diemThiCuoiKy * 3) / 6;
+        if (diemTrungBinh >= 8.0 && diemTrungBinh <= 10.0) {
+          alert(
+            "Điểm trung bình của bạn là: " + diemTrungBinh + " - xếp loại: Giỏi"
+          );
+        } else if (diemTrungBinh >= 6.5 && diemTrungBinh < 8.0) {
+          alert(
+            "Điểm trung bình của bạn là: " + diemTrungBinh + " - xếp loại: khá"
+          );
+        } else if (diemTrungBinh >= 5.0 && diemTrungBinh < 6.5) {
+          alert(
+            "Điểm trung bình của bạn là: " +
+              diemTrungBinh +
+              " - xếp loại: trung bình"
+          );
+        } else if (diemTrungBinh >= 3.5 && diemTrungBinh < 5.0) {
+          alert(
+            "Điểm trung bình của bạn là: " + diemTrungBinh + " - xếp loại: yếu"
+          );
+        } else if (diemTrungBinh < 3.5) {
+          alert(
+            "Điểm trung bình của bạn là: " + diemTrungBinh + " - xếp loại: kém"
+          );
+        } else {
+          alert("Điểm trung bình không hợp lệ, vui lòng nhập lại");
+        }
+      }
+      function bai6() {
+        let doanhSo = parseFloat(prompt("Nhập vào doanh số bán hàng"));
+        let thuong = doanhSo * 0.1;
+        alert("Tiền thưởng là: " + thuong);
+      }
+      function bai7() {
+        let thueBao = parseInt(
+          prompt(
+            "Viettel (1), Mobifone (2), Vinafone(3). Mời bạn chọn loại thuê bao (1-3):"
+          )
+        );
+        switch (thueBao) {
+          case 1:
+            const soPhutNoiMangVT = parseInt(
+              prompt("Nhập vào số phút gọi nội mạng của bạn")
+            );
+            const soPhutNgoaiMangVT = parseInt(
+              prompt("Nhập vào số phút gọi ngoai mạng của bạn")
+            );
+            const phiThueBaoVT =
+              soPhutNoiMangVT * 1190 + soPhutNgoaiMangVT * 1390;
+            alert("Phí thuê bao là: " + phiThueBaoVT);
+            break;
+          case 2:
+            const soPhutNoiMangMB = parseInt(
+              prompt("Nhập vào số phút gọi nội mạng của bạn")
+            );
+            const soPhutNgoaiMangMB = parseInt(
+              prompt("Nhập vào số phút gọi ngoai mạng của bạn")
+            );
+            const phiThueBaoMB =
+              soPhutNoiMangMB * 1580 + soPhutNgoaiMangMB * 1780;
+            alert("Phí thuê bao là: " + phiThueBaoMB);
+            break;
+          case 3:
+            const soPhutNoiMangVN = parseInt(
+              prompt("Nhập vào số phút gọi nội mạng của bạn")
+            );
+            const soPhutNgoaiMangVN = parseInt(
+              prompt("Nhập vào số phút gọi ngoai mạng của bạn")
+            );
+            const phiThueBaoVN =
+              soPhutNoiMangVN * 1580 + soPhutNgoaiMangVN * 1780;
+            alert("Phí thuê bao là: " + phiThueBaoVN);
+            break;
+          default:
+            alert("Lựa chọn không hợp lệ, vui lòng chọn lại");
+        }
+      }
+    </script>
+  </body>
 </html>
