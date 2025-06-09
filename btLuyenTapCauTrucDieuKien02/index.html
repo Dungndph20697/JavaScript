@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        height: 100px;
+        width: 1510px;
+      }
+      button {
+        width: 70%;
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>Bài 1</td>
+        <td>Bài 2</td>
+        <td>Bài 3</td>
+        <td>Bài 4</td>
+        <td>Bài 5</td>
+        <td>Bài 6</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" id="bai1" placeholder="Nhập độ C" />
+          <p>Độ F sau khi đã chuyển đổi là:</p>
+          <p id="result1"></p>
+        </td>
+        <td>
+          <input type="text" id="bai2" placeholder="Nhập mét" />
+          <p>Mét sau khi đã chuyển đổi sang feet là:</p>
+          <p id="result2"></p>
+        </td>
+        <td>
+          <input type="text" id="bai3" placeholder="Nhập chiều dài các cạnh" />
+          <p>Diện tích hình vuông là:</p>
+          <p id="result3"></p>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="chieuDai"
+            placeholder="Nhập chiều dài"
+            style="margin-bottom: 10px; margin-top: 10px"
+          /><br />
+          <input type="text" id="chieuRong" placeholder="Nhập chiều rộng" />
+          <p>Diện tích hình chữ nhật là:</p>
+          <p id="result4"></p>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="canhDay"
+            placeholder="Nhập chiều dài cạnh đáy"
+            style="margin-bottom: 10px; margin-top: 10px"
+          /><br />
+          <input type="text" id="chieuCao" placeholder="Nhập chiều cao" />
+          <p>Diện tích hình tam giác là:</p>
+          <p id="result5"></p>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="heSoA"
+            placeholder="Nhập hệ số a"
+            style="margin-bottom: 10px; margin-top: 10px"
+          />
+          <br />
+          <input type="text" id="heSoB" placeholder="Nhập hệ số b" />
+          <p id="result6"></p>
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="bai1()">Nộp</button></td>
+        <td><button onclick="bai2()">Nộp</button></td>
+        <td><button onclick="bai3()">Nộp</button></td>
+        <td><button onclick="bai4()">Nộp</button></td>
+        <td><button onclick="bai5()">Nộp</button></td>
+        <td><button onclick="bai6()">Nộp</button></td>
+      </tr>
+      <tr>
+        <td>Bài 7</td>
+        <td>Bài 8</td>
+        <td>Bài 9</td>
+        <td>Bài 10</td>
+        <td>Bài 11</td>
+        <td>Bài 12</td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            type="text"
+            id="bai7HeSoA"
+            placeholder="Nhập hệ số a"
+            style="margin-bottom: 10px; margin-top: 10px"
+          />
+          <br />
+          <input
+            type="text"
+            id="bai7HeSoB"
+            placeholder="Nhập hệ số b"
+            style="margin-bottom: 10px"
+          />
+          <br />
+          <input
+            type="text"
+            id="bai7HeSoC"
+            placeholder="Nhập hệ số c"
+            style="margin-bottom: 10px"
+          />
+          <p id="result7"></p>
+        </td>
+        <td>
+          <input type="text" id="bai8" placeholder="Nhập tuổi" />
+          <p id="result8"></p>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="bai9a"
+            placeholder="Nhập a"
+            style="margin-bottom: 10px; margin-top: 10px"
+          />
+          <br />
+          <input
+            type="text"
+            id="bai9b"
+            placeholder="Nhập b"
+            style="margin-bottom: 10px"
+          /><br />
+          <input type="text" id="bai9c" placeholder="Nhập c" />
+          <p id="result9"></p>
+        </td>
+        <td>
+          <input type="text" id="soDien" placeholder="Nhập số điện tiêu thụ" />
+          <p id="result10"></p>
+        </td>
+        <td>
+          <input type="text" id="bai11" placeholder="Nhập thu nhập" />
+          <p id="result11"></p>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="soTien"
+            placeholder="Nhập thu nhập"
+            style="margin-bottom: 10px; margin-top: 10px"
+          /><br />
+          <input
+            type="text"
+            id="soThang"
+            placeholder="Nhập số tháng"
+            style="margin-bottom: 10px"
+          /><br />
+          <input
+            type="text"
+            id="laiSuat"
+            placeholder="Nhập lãi xuất ngân hàng"
+          />
+          <p id="result12"></p>
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="bai7()">Nộp</button></td>
+        <td><button onclick="bai8()">Nộp</button></td>
+        <td><button onclick="bai9()">Nộp</button></td>
+        <td><button onclick="bai10()">Nộp</button></td>
+        <td><button onclick="bai11()">Nộp</button></td>
+        <td><button onclick="bai12()">Nộp</button></td>
+      </tr>
+      <script>
+        function bai1() {
+          const doC = parseFloat(document.getElementById("bai1").value);
+          const doF = (doC * 9) / 5 + 32;
+          document.getElementById("result1").innerText = doF;
+        }
+        function bai2() {
+          const met = parseFloat(document.getElementById("bai2").value);
+          const feet = met * 3.28084;
+          document.getElementById("result2").innerText = feet;
+        }
+        function bai3() {
+          const chieuDai = parseFloat(document.getElementById("bai3").value);
+          const dienTich = chieuDai * chieuDai;
+          document.getElementById("result3").innerText = dienTich;
+        }
+        function bai4() {
+          const chieuDai = parseFloat(
+            document.getElementById("chieuDai").value
+          );
+          const chieuRong = parseFloat(
+            document.getElementById("chieuRong").value
+          );
+          const dienTich = chieuDai * chieuRong;
+          document.getElementById("result4").innerText = dienTich;
+        }
+        function bai5() {
+          const canhDay = parseFloat(document.getElementById("canhDay").value);
+          const chieuCao = parseFloat(
+            document.getElementById("chieuCao").value
+          );
+          const dienTich = (canhDay * chieuCao) / 2;
+          document.getElementById("result5").innerText = dienTich;
+        }
+        function bai6() {
+          const heSoA = parseFloat(document.getElementById("heSoA").value);
+          const heSoB = parseFloat(document.getElementById("heSoB").value);
+
+          if (heSoA === 0) {
+            if (heSoB === 0) {
+              document.getElementById("result6").innerText =
+                "Phương trình có vô số nghiệm";
+            } else {
+              document.getElementById("result6").innerText =
+                "Phương trình vô nghiệm";
+            }
+          } else {
+            const nghiem = -heSoB / heSoA;
+            document.getElementById("result6").innerText =
+              "Nghiệm của phương trình là: " + nghiem;
+          }
+        }
+        function bai7() {
+          const a = parseFloat(document.getElementById("bai7HeSoA").value);
+          const b = parseFloat(document.getElementById("bai7HeSoB").value);
+          const c = parseFloat(document.getElementById("bai7HeSoC").value);
+          if (a === 0) {
+            if (b === 0) {
+              if (c === 0) {
+                document.getElementById("result7").innerText =
+                  "Phương trình có vô số nghiệm";
+              } else {
+                document.getElementById("result7").innerText =
+                  "Phương trình vô nghiệm";
+              }
+            } else {
+              const nghiem = -c / b;
+              document.getElementById("result7").innerText =
+                "Nghiệm của phương trình là: " + nghiem;
+              console.log(nghiem);
+            }
+          } else {
+            const delta = b * b - 4 * a * c;
+            if (delta < 0) {
+              document.getElementById("result7").innerText =
+                "Phương trình vô nghiệm";
+            } else if (delta === 0) {
+              const nghiem = -b / (2 * a);
+              document.getElementById("result7").innerText =
+                "Phương trình có nghiệm kép: " + nghiem;
+            } else {
+              const nghiem1 = (-b + Math.sqrt(delta)) / (2 * a);
+              const nghiem2 = (-b - Math.sqrt(delta)) / (2 * a);
+              document.getElementById("result7").innerText =
+                "Phương trình có hai nghiệm phân biệt: " +
+                nghiem1 +
+                " và " +
+                nghiem2;
+            }
+          }
+        }
+        function bai8() {
+          const tuoi = parseFloat(document.getElementById("bai8").value);
+          if (tuoi > 0 && tuoi < 120) {
+            document.getElementById("result8").innerText =
+              "Đây là tuổi của một người";
+          } else {
+            document.getElementById("result8").innerText =
+              "Đây không phải là tuổi của một người";
+          }
+        }
+        function bai9() {
+          const a = parseFloat(document.getElementById("bai9a").value);
+          const b = parseFloat(document.getElementById("bai9b").value);
+          const c = parseFloat(document.getElementById("bai9c").value);
+          if (a > 0 && b > 0 && c > 0) {
+            if (a + b > c && a + c > b && b + c > a) {
+              document.getElementById("result9").innerText =
+                "Đây là một tam giác";
+            } else {
+              document.getElementById("result9").innerText =
+                "Đây không phải là một tam giác";
+            }
+          } else {
+            document.getElementById("result9").innerText =
+              "Các cạnh phải là số dương";
+          }
+        }
+        function bai10() {
+          const soDien = parseFloat(document.getElementById("soDien").value);
+          if (soDien <= 50) {
+            tien = soDien * 1806;
+          } else if (soDien <= 100) {
+            tien = 50 * 1806 + (soDien - 50) * 1866;
+          } else if (soDien <= 200) {
+            tien = 50 * 1806 + 50 * 1866 + (soDien - 100) * 2167;
+          } else if (soDien <= 300) {
+            tien = 50 * 1806 + 50 * 1866 + 100 * 2167 + (soDien - 200) * 2729;
+          } else if (soDien <= 400) {
+            tien =
+              50 * 1806 +
+              50 * 1866 +
+              100 * 2167 +
+              100 * 2729 +
+              (soDien - 300) * 3050;
+          } else {
+            tien =
+              50 * 1806 +
+              50 * 1866 +
+              100 * 2167 +
+              100 * 2729 +
+              100 * 3050 +
+              (soDien - 400) * 3151;
+          }
+          document.getElementById("result10").innerText =
+            "Tiền điện: " + tien.toLocaleString() + " VNĐ";
+        }
+        function bai11() {
+          const thuNhap = parseFloat(document.getElementById("bai11").value);
+          if (thuNhap <= 5000000) {
+            thue = thuNhap * 0.05;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+          } else if (thuNhap <= 10000000) {
+            thue = 5 * 0.05 + (thuNhap - 5) * 0.1;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+          } else if (thuNhap <= 18000000) {
+            thue = 5 * 0.05 + 5 * 0.1 + (thuNhap - 10) * 0.15;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+          } else if (thuNhap <= 32000000) {
+            thue = 5 * 0.05 + 5 * 0.1 + 8 * 0.15 + (thuNhap - 18) * 0.2;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+          } else if (thuNhap <= 52000000) {
+            thue =
+              5 * 0.05 + 5 * 0.1 + 8 * 0.15 + 14 * 0.2 + (thuNhap - 32) * 0.25;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+          } else if (thuNhap <= 80000000) {
+            thue =
+              5 * 0.05 +
+              5 * 0.1 +
+              8 * 0.15 +
+              14 * 0.2 +
+              20 * 0.25 +
+              (thuNhap - 52) * 0.3;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + result11 + " VNĐ";
+          } else {
+            thue =
+              5 * 0.05 +
+              5 * 0.1 +
+              8 * 0.15 +
+              14 * 0.2 +
+              20 * 0.25 +
+              28 * 0.3 +
+              (thuNhap - 80) * 0.35;
+            document.getElementById("result11").innerText =
+              "Thuế thu nhập cá nhân: " + result11 + " VNĐ";
+          }
+        }
+        function bai12() {
+          const soTien = parseFloat(document.getElementById("soTien").value);
+          const soThang = parseInt(document.getElementById("soThang").value);
+          const laiSuat =
+            parseFloat(document.getElementById("laiSuat").value) / 100;
+          const tongTien = soTien * Math.pow(1 + laiSuat, soThang);
+          document.getElementById("result12").innerText =
+            "Tổng số tiền sau " +
+            soThang +
+            " tháng: " +
+            tongTien.toLocaleString() +
+            " VNĐ";
+        }
+      </script>
+    </table>
+  </body>
+</html>
