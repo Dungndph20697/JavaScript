@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = parseInt(prompt("Nhập vào một số nguyên dương:"));
+      let total = 0;
+      while (num != -1) {
+        total += num;
+        alert("Số bạn vừa nhập là: " + num + ". Tổng hiện tại là: " + total);
+        num = parseInt(
+          prompt("Nhập vào một số nguyên dương (hoặc -1 để kết thúc):")
+        );
+      }
+
+      let i = 0;
+      while (i < 100) {
+        document.write("<hr width = " + i + "%>");
+        i++;
+      }
+    </script>
+  </body>
+</html>
