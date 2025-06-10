@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Bài 1</th>
+        <th>Bài 2</th>
+      </tr>
+      <td><p id="b1"></p></td>
+      <td>
+        <input type="text" placeholder="nhập vào một số" /><button
+          onclick="bai2()"
+        >
+          OK
+        </button>
+        <p id="b2"></p>
+      </td>
+    </table>
+    <p id="b1"></p>
+    <script>
+      let text = "";
+      let i = 0;
+      for (i = 0; i < 10; i++) {
+        text += "The number is " + i + "<br>";
+      }
+      document.getElementById("b1").innerHTML = text;
+      function bai2() {
+        let num = parseInt(document.querySelector("input").value);
+        let total = 0;
+        for (let i = 1; i <= num; i++) {
+          total += i;
+        }
+        document.getElementById("b2").innerHTML =
+          "Tổng từ 1 đến " + num + " là: " + total;
+      }
+    </script>
+  </body>
+</html>
