@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let x = [-3, 5, 2, 1, 4];
+      let last = x.length - 1;
+      let first = 0;
+      document.write("Mảng ban đầu: " + x + "<br>");
+      while (first < last) {
+        let temp = x[first];
+        x[first] = x[last];
+        x[last] = temp;
+        first++;
+        last--;
+      }
+      document.write(x);
+    </script>
+  </body>
+</html>
