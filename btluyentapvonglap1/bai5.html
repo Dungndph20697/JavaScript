@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 0;
+      let b = 1;
+      let count = 0;
+      let sum = 0;
+      while (true) {
+        sum += a;
+        let temp = a + b;
+        a = b;
+        b = temp;
+        if (count == 19) {
+          break;
+        }
+        count++;
+      }
+      document.write(
+        "Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + sum + "<br>"
+      );
+    </script>
+  </body>
+</html>

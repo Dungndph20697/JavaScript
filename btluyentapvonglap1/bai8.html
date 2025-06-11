@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Bắt đầu</button>
+    <script>
+      let button = document.querySelector("button");
+
+      button.addEventListener("click", function () {
+        let number = parseInt(prompt("chọn khoảng cách để đoán"));
+        let count = 0;
+        let randomNumber = Math.floor(Math.random() * number) + 1; // Số ngẫu nhiên từ 1 đến 10
+        let doan = parseInt(prompt("Nhập số để đoán:"));
+        console.log("Số ngẫu nhiên là: " + randomNumber);
+        while (randomNumber != doan) {
+          if (count >= 3) {
+            console.log("1");
+          } else {
+            if (doan != randomNumber) {
+              alert("Chúc mừng bạn đã đoán đúng!");
+              break;
+            } else {
+              count++;
+              if (count < 3) {
+                if (doan < randomNumber) {
+                  alert(
+                    "Bạn đã đoán sai, số bạn đoán nhỏ hơn số ngẫu nhiên, hãy thử lại"
+                  );
+                } else {
+                  alert(
+                    "Bạn đã đoán sai, số bạn đoán lớn hơn số ngẫu nhiên, hãy thử lại"
+                  );
+                }
+                doan = parseInt(prompt("Nhập lại số để đoán:"));
+              } else {
+                alert("Bạn đã hết lượt, số ngẫu nhiên là: " + randomNumber);
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
