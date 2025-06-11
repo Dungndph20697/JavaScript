@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="txtValue" />
+    <input
+      type="button"
+      id="btnAdd"
+      value="Add"
+      onclick="add_element_to_array();"
+    />
+    <input
+      type="button"
+      id="btnDisplay"
+      value="Display"
+      onclick="display_array();"
+    />
+    <div id="result"></div>
+    <script>
+      var arr = Array();
+      var id = 0;
+      function add_element_to_array() {
+        var value = document.getElementById("txtValue");
+        arr[id] = value.value;
+        alert("Element " + (id + 1) + " added: " + value.value);
+        id++;
+        value.value = "";
+      }
+      function display_array() {
+        var result = document.getElementById("result");
+        result.innerHTML = "<hr>";
+        for (var i = 0; i < arr.length; i++) {
+          result.innerHTML += "Element " + (i + 1) + ": " + arr[i] + "<br>";
+        }
+      }
+    </script>
+  </body>
+</html>
