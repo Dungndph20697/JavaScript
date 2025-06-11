@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let soTien = parseFloat(prompt("Nhập số tiền ban đầu (VNĐ):"));
+      let soThang = parseInt(prompt("Nhập số tháng gửi:"));
+      let laiSuat = parseFloat(prompt("Nhập lãi suất hàng tháng (%):")) / 100;
+      let tongTien = soTien * Math.pow(1 + laiSuat, soThang);
+      alert(
+        "Tổng số tiền sau " +
+          soThang +
+          " tháng là: " +
+          tongTien.toLocaleString() +
+          " VNĐ"
+      );
+    </script>
+  </body>
+</html>
