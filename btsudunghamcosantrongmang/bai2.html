@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Nhập vào chuỗi số bất kỳ");
+      let a = "";
+      for (let i = 0; i < str.length; i++) {
+        let indexFirst = str[i - 1];
+        let indexLast = str[i];
+        if (indexFirst % 2 == 0 && indexLast % 2 == 0) {
+          a += "-" + str[i];
+        } else {
+          a += str[i];
+        }
+      }
+      document.write(a);
+    </script>
+  </body>
+</html>
