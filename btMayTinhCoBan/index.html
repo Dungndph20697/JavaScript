@@ -57,7 +57,30 @@
         if (x === "c") {
           input.value = "";
         } else if (x != "=") {
-          document.getElementById("input").value += x;
+          let str = document.getElementById("input").value;
+          console.log(str.length);
+          if (
+            str[str.length - 1] === "+" ||
+            str[str.length - 1] === "-" ||
+            str[str.length - 1] === "*" ||
+            str[str.length - 1] === "/"
+          ) {
+            console.log("a");
+            if (x !== str.length) {
+              if (x === "+" || x === "-" || x === "*" || x === "/") {
+                let temp = "";
+                for (let i = 0; i < str.length - 1; i++) {
+                  temp += str[i];
+                }
+                document.getElementById("input").value = temp + x;
+              } else {
+                document.getElementById("input").value += x;
+              }
+            }
+          } else {
+            console.log("b");
+            document.getElementById("input").value += x;
+          }
         } else {
           document.getElementById("input").innerText = document.getElementById(
             "input"
