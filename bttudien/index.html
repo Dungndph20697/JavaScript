@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="search" /> <button onclick="search()">search</button>
+    <script>
+      function search() {
+        let tiengAnh = ["hello", "goodbye", "monday", "tuesday", "wedday"];
+        let tiengViet = ["xin chào", "tạm biệt", "thứ 2", "thứ 3", "thứ 4"];
+        let input = document.getElementById("search").value;
+        let check = true;
+        for (let i = 0; i < 5; i++) {
+          if (input === tiengAnh[i]) {
+            check = false;
+            document.write(tiengViet[i]);
+          }
+        }
+        if (check == true) document.write("Không tìm thấy");
+      }
+    </script>
+  </body>
+</html>
