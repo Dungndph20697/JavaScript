@@ -28,33 +28,33 @@
         </td>
       </tr>
       <tr>
-        <td><button onclick="tinh()">1</button></td>
-        <td><button onclick="tinh('2')">2</button></td>
-        <td><button onclick="tinh('3')">3</button></td>
+        <td><button onclick="tinh(1)">1</button></td>
+        <td><button onclick="tinh(2)">2</button></td>
+        <td><button onclick="tinh(3)">3</button></td>
         <td><button onclick="tinh('+')">+</button></td>
       </tr>
       <tr>
-        <td><button onclick="tinh('4')">4</button></td>
-        <td><button onclick="tinh('5')">5</button></td>
-        <td><button onclick="tinh('6')">6</button></td>
+        <td><button onclick="tinh(4)">4</button></td>
+        <td><button onclick="tinh(5)">5</button></td>
+        <td><button onclick="tinh(6)">6</button></td>
         <td><button onclick="tinh('-')">-</button></td>
       </tr>
       <tr>
-        <td><button onclick="tinh('7')">7</button></td>
-        <td><button onclick="tinh('8')">8</button></td>
-        <td><button onclick="tinh('9')">9</button></td>
-        <td><button onclick="tinh('x')">x</button></td>
+        <td><button onclick="tinh(7)">7</button></td>
+        <td><button onclick="tinh(8)">8</button></td>
+        <td><button onclick="tinh(9)">9</button></td>
+        <td><button onclick="tinh('*')">x</button></td>
       </tr>
       <tr>
-        <td><button onclick="tinh('C')">C</button></td>
-        <td><button onclick="tinh('0')">0</button></td>
+        <td><button onclick="tinh('c')">C</button></td>
+        <td><button onclick="tinh(0)">0</button></td>
         <td><button onclick="tinh('=')">=</button></td>
         <td><button onclick="tinh('/')">/</button></td>
       </tr>
     </table>
     <script>
       function tinh(x) {
-        if (x === "C") {
+        if (x === "c") {
           input.value = "";
         } else if (x != "=") {
           document.getElementById("input").value += x;
