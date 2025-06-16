@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <script>
+      function meetToFeet(x) {
+        return 3.279 * x;
+      }
+      function feetToMeter(x) {
+        return 0.305 * x;
+      }
+
+      let nhapFeet = prompt("mời nhập feet:");
+      let nhapMeter = prompt("mời nhập metter:");
+      let resultFeet = feetToMeter(nhapFeet);
+      let resultMeter = meetToFeet(nhapMeter);
+
+      document.getElementById("result").innerHTML =
+        nhapFeet + " foot = " + resultFeet + "meter";
+      "<br>" + nhapMeter + " meter = " + resultMeter + "foot";
+    </script>
+  </body>
+</html>
