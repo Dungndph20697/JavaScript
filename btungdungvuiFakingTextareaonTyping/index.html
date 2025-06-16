@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Type anthing slowly</h1>
+      <textarea
+        id="a"
+        style="width: 300px; height: 200px"
+        onkeydown="(nhap(event))"
+      ></textarea>
+    </div>
+    <script>
+      const textarea = document.getElementById("a");
+      const str = "TÔI LÀ MỘT ĐỨA NGỐC";
+      let index = 0;
+      function nhap(event) {
+        if (event.key != "Backspace") {
+          event.preventDefault();
+          if (index == str.length) index = 0;
+          if (index < str.length) {
+            console.log(index);
+            textarea.value += str[index];
+            index++;
+          }
+        } else {
+          console.log("-" + index);
+          textarea.value = str.substring(0, index);
+          index--;
+          if (index < 0) index = 0;
+        }
+      }
+    </script>
+  </body>
+</html>

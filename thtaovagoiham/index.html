@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function showString(x) {
+        let result = "";
+        if (x) {
+          result = "ok";
+        } else {
+          result = "ko ok";
+        }
+        return result;
+      }
+      let comfirm = confirm("Vao game khong");
+      let theComfirm = showString(comfirm);
+      alert(theComfirm);
+    </script>
+  </body>
+</html>
