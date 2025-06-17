@@ -16,19 +16,21 @@
     </div>
     <script>
       const textarea = document.getElementById("a");
-      const str = "TÔI LÀ MỘT ĐỨA NGỐC";
+      const str = "TÔI LÀ MỘT ĐỨA NGỐC!!!!!";
       let index = 0;
       function nhap(event) {
         if (event.key != "Backspace") {
           event.preventDefault();
-          if (index == str.length) index = 0;
-          if (index < str.length) {
-            console.log(index);
+          if (index == str.length - 1) {
+            textarea.value = str;
+          } else {
             textarea.value += str[index];
             index++;
           }
+          if (index == str.length) {
+            index = 0;
+          }
         } else {
-          console.log("-" + index);
           textarea.value = str.substring(0, index);
           index--;
           if (index < 0) index = 0;
