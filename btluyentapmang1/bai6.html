@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 5, 4, 7, 3, 11, 14, 18, 19, 30, 8, 9];
+      let number = +prompt("Nhập vào một số nguyên: ");
+      let check = false;
+      for (const element of arr) {
+        if (number === element) {
+          check = true;
+          document.write(number + " is in the array");
+        }
+      }
+      if (check == false) {
+        document.write(number + " is not in the array");
+      }
+    </script>
+  </body>
+</html>

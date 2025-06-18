@@ -8,13 +8,19 @@
   <body>
     <p id="demo"></p>
     <script>
-      var i = 5;
-      for (var i = 0; i < 10; i++) {
-        console.log(i);
-        i++;
+      let arr = [2, 4, 6, 4, 2, 6, 7, 9];
+      let max = arr[0];
+      let sum = 0;
+      let count = 0;
+      for (const element of arr) {
+        count++;
+        sum += element;
+        if (element > max) {
+          max = element;
+        }
       }
-
-      document.getElementById("demo").innerHTML = i;
+      document.write("Phần tử lớn nhất trong mảng là: " + max + "<br>");
+      document.write("Trung bình của các phần tử là: " + sum / count);
     </script>
   </body>
 </html>
