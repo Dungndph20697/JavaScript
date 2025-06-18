@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      let nhap = +prompt("Nhập số lượng muốn nhập vào: ");
+      for (let i = 0; i < nhap; i++) {
+        arr[i] = prompt("Nhập vào ký tự thứ " + i + ": ");
+      }
+      document.write("Các ký tự vừa nhập là: ");
+      for (const element of arr) {
+        document.write("<br>" + element);
+      }
+      for (let i = 0; i < nhap; i++) {
+        if (arr[i] == "-") {
+          arr[i] = "_";
+        }
+      }
+      document.write("Các ký tự sau khi thay đổi là: ");
+      for (const element of arr) {
+        document.write("<br>" + element);
+      }
+    </script>
+  </body>
+</html>

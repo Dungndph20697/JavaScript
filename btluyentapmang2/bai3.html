@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        0,
+        "a",
+        8,
+        "b",
+        "d",
+        9,
+        "e",
+        "b",
+        "s",
+        "m",
+        2,
+        "n",
+        "l",
+        "j",
+        1,
+      ];
+      const strNumber = "0123456789";
+      let count = 0;
+      for (const element of arr) {
+        if (strNumber.includes(element)) count++;
+      }
+      document.write("Số lượng số trong mảng là: " + count);
+      
+    </script>
+  </body>
+</html>
