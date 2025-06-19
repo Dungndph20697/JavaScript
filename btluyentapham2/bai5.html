@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let soThuNhat = +prompt("Nhập số thứ nhất: ");
+      let soThuHai = +prompt("Nhập số thứ hai: ");
+      let soThuBa = +prompt("Nhập số thứ ba: ");
+      function timSoLonNhat() {
+        let temp = soThuNhat;
+        if (temp < soThuHai) {
+          temp = soThuHai;
+        }
+        if (temp < soThuBa) {
+          temp = soThuBa;
+        }
+        return temp;
+      }
+      alert("Số lớn nhất là: " + timSoLonNhat());
+    </script>
+  </body>
+</html>

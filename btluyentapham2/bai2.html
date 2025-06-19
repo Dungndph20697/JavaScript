@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function tinhDienTichHinhTron(r) {
+        return Math.PI * (r * r);
+      }
+      function tinhChuViHinhTron(r) {
+        return 2 * Math.PI * r;
+      }
+      let banKinh = +prompt("Nhập vào bán kính hình tròn");
+      alert("Chu vi hình tròn là: " + +tinhChuViHinhTron(banKinh).toFixed(2));
+      alert(
+        "Diện tích hình tròn là: " + +tinhDienTichHinhTron(banKinh).toFixed(2)
+      );
+    </script>
+  </body>
+</html>

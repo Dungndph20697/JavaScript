@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="daoNguocMang()">
+    <script>
+      function daoNguocMang() {
+        let arr = [];
+        let soLuongMang = +prompt("Nhập số lượng mảng");
+        for (let i = 0; i < soLuongMang; i++) {
+          arr[i] = +prompt("Nhập phần tử thứ " + i);
+        }
+        document.write("Các phần tử vừa nhập là: <br>");
+        for (const element of arr) {
+          document.write(element + "<br>");
+        }
+        document.write("Mảng sau khi đảo ngược là: <br>");
+        let arr2 = arr.reverse();
+        for (const element of arr2) {
+          document.write(element + "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
