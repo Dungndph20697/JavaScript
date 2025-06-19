@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Add New Product</h1>
+    <input type="text" name="" id="nameProduct" />
+    <button onclick="addProduct()">add</button>
+    <div id="update"></div>
+    <h1>Display All Product</h1>
+    <div id="table" style="margin-top: 20px"></div>
+
+    <script>
+      let arrProduct = ["Xe máy", "Xe đạp", "Ô tô"];
+      show();
+
+      function addProduct() {
+        let nameProduct = document.getElementById("nameProduct").value;
+        arrProduct.unshift(nameProduct);
+        clear();
+        show();
+      }
+
+      function deleteProduct(index) {
+        arrProduct.splice(index, 1);
+        show();
+      }
+
+      function updateProduct(index) {
+        let btnUpdate = document.getElementById("update");
+        let showButton =
+          "<button onclick='saveUpdate(" + index + ")'>update</button>";
+        btnUpdate.innerHTML = showButton;
+        let input = document.getElementById("nameProduct");
+        input.value = arrProduct[index];
+        show();
+      }
+
+      function saveUpdate(index) {
+        let input = document.getElementById("nameProduct").value;
+        arrProduct[index] = input;
+        clear();
+        show();
+      }
+
+      function clear() {
+        let input = document.getElementById("nameProduct");
+        input.value = "";
+      }
+
+      function show() {
+        let divTable = document.getElementById("table");
+        let table =
+          "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+        table += "<tr> <th>Product Name</th></tr>";
+        for (let i = 0; i < arrProduct.length; i++) {
+          table +=
+            "<tr> <td>" +
+            arrProduct[i] +
+            "</td> <td> <button onclick='updateProduct(" +
+            i +
+            ")'>Edit</button> </td><td> <button onclick ='deleteProduct(" +
+            i +
+            ")'>Delete</button> </td> </tr>";
+        }
+        table += "</table>";
+        divTable.innerHTML = table;
+      }
+    </script>
+  </body>
+</html>
