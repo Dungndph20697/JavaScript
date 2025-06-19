@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" placeholder="nhập số thứ nhất" id="a" />
+    <input type="number" placeholder="nhập số thứ hai" id="b" />
+    <button onclick="kiemTraHaiSo()">Xác nhận</button>
+    <p id="result"></p>
+    <script>
+      function kiemTraHaiSo() {
+        let soThu1 = +document.getElementById("a").value;
+        let soThu2 = +document.getElementById("b").value;
+        if (soThu1 > soThu2) {
+          alert("Số thứ nhất lớn hơn số thứ 2");
+        } else {
+          document.getElementById("result").innerText = soThu1 + soThu2;
+        }
+      }
+    </script>
+  </body>
+</html>

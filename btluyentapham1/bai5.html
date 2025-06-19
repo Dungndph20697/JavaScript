@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arrNameStar = [
+        "Polaris",
+        "Aldebaran",
+        "Deneb",
+        "Vega",
+        "Altair",
+        "Dubhe",
+        "Regulus",
+      ];
+      let arrName = [
+        "Ursa Minor",
+        "Taurus",
+        "Cygnus",
+        "Lyra",
+        "Aquila",
+        "Ursa Major",
+        "Leo",
+      ];
+
+      function timTenNgoiSao(nameStar) {
+        let index = -1;
+        console.log(nameStar);
+        for (let i = 0; i < arrNameStar.length; i++) {
+          if (arrNameStar[i] == nameStar) {
+            return i;
+          }
+        }
+        return index;
+      }
+      let nameStar = prompt("Nhập tên sao");
+      let result =
+        parseInt(timTenNgoiSao(nameStar)) != -1
+          ? arrName[parseInt(timTenNgoiSao(nameStar))]
+          : "Không tìm thấy";
+      alert(result);
+    </script>
+  </body>
+</html>
