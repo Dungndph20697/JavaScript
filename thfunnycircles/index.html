@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1368px"
+      height="768px"
+      style="border: 1px solid #d3d3d3"
+    ></canvas>
+    <script>
+      function hinhTron(x, y, banKinh) {
+        this.x = x;
+        this.y = y;
+        this.banKinh = banKinh;
+      }
+
+      function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+      }
+
+      function getRandomColor() {
+        var mauDo = getRandomHex();
+        var mauXanhLa = getRandomHex();
+        var mauXanhNuocBien = getRandomHex();
+        return "rgb(" + mauDo + "," + mauXanhNuocBien + "," + mauXanhLa + ")";
+      }
+
+      function taoHinhTron() {
+        let canvas = document.getElementById("myCanvas").getContext("2d");
+        let banKinh = Math.floor(Math.random() * 80);
+        let color = getRandomColor();
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let ht = new hinhTron(x, y, banKinh);
+        canvas.beginPath();
+        canvas.arc(ht.x, ht.y, ht.banKinh, 0, 2 * Math.PI);
+        canvas.fillStyle = color;
+        canvas.fill();
+      }
+
+      for (let i = 0; i < 30; i++) {
+        taoHinhTron();
+      }
+    </script>
+  </body>
+</html>
