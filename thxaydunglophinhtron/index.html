@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let hinhTron = function (banKinh) {
+        this.banKinh = banKinh;
+        this.getBanKinh = function () {
+          return this.banKinh;
+        };
+        this.getDienTich = function () {
+          return Math.PI * banKinh * banKinh;
+        };
+      };
+      let ht = new hinhTron(2);
+      let dienTich = ht.getDienTich();
+      alert("Bán kính: " + ht.getBanKinh() + " / diện tích: " + dienTich);
+    </script>
+  </body>
+</html>
