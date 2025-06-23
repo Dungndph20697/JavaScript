@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function hinhCN(chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+
+        this.setChieuDai = function () {
+          this.chieuDai = chieuDai;
+        };
+        this.setChieuRong = function () {
+          this.chieuRong = chieuRong;
+        };
+
+        this.getChieuDai = function () {
+          return this.chieuDai;
+        };
+
+        this.getChieuRong = function () {
+          return this.chieuRong;
+        };
+        this.getChuVi = function () {
+          return (chieuDai + chieuRong) * 2;
+        };
+        this.getDienTich = function () {
+          return chieuDai * chieuRong;
+        };
+      }
+      let hcn = new hinhCN(200, 100);
+
+      document.write(
+        "Hình chữ nhật có chiều dài là: " +
+          hcn.getChieuDai() +
+          ", chiều rộng là: " +
+          hcn.getChieuRong()
+      );
+
+      hcn.setChieuDai(400);
+      hcn.setChieuRong(200);
+      document.write(
+        "<br>Hình chữ nhật có chiều dài sau khi thay đổi là: " +
+          hcn.getChieuDai() +
+          ", chiều rộng sau khi thay đổi là: " +
+          hcn.getChieuRong()
+      );
+      document.write(
+        "<br>Diện tích hình chữ nhật là: " +
+          hcn.getDienTich() +
+          ", chu vi là: " +
+          hcn.getChuVi()
+      );
+    </script>
+  </body>
+</html>
