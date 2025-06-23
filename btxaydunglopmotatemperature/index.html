@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function nhietDo(doC) {
+        this.doC = doC;
+        this.getDoC = function () {
+          return this.doC;
+        };
+        this.getDoF = function () {
+          return (this.doC * 9) / 5 + 32;
+        };
+        this.getDoK = function () {
+          return this.doC + 273.15;
+        };
+      }
+      let nd = new nhietDo(3);
+      document.write(
+        "Độ C: " +
+          nd.getDoC() +
+          "<br>Độ F: " +
+          nd.getDoF() +
+          "<br>Độ K: " +
+          nd.getDoK()
+      );
+    </script>
+  </body>
+</html>
