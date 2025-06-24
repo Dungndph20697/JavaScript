@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class DienThoai {
+        #tenDienThoai;
+        #pin = 100;
+        #tinNhanDangViet;
+        #trangThai;
+        #tinNhanDaGui;
+        #hopThuDen;
+
+        setPin = function (pin) {
+          this.#pin = pin;
+        };
+
+        setTenDienThoai = function (ten) {
+          this.#tenDienThoai = ten;
+        };
+
+        getPin = function () {
+          return this.#pin;
+        };
+
+        setTinNhanDangViet = function (tn) {
+          this.#tinNhanDangViet = tn;
+        };
+
+        getTinNhanDangViet = function () {
+          return this.#tinNhanDangViet;
+        };
+
+        setHopThuDen = function (tn) {
+          this.#hopThuDen = tn;
+        };
+
+        xemTinNhanDangViet = function () {
+          document.write(
+            "Tin nhắn " +
+              this.#tenDienThoai +
+              ": " +
+              this.#tinNhanDangViet +
+              "<br>"
+          );
+        };
+
+        kiemTraTrangThaiDienThoai = function () {
+          this.#pin--;
+          document.write(
+            "Trạng thái điện thoại " +
+              this.#tenDienThoai +
+              ": " +
+              this.#trangThai ==
+              true
+              ? "Đang bật<br>"
+              : "Đang tắt<br>"
+          );
+        };
+
+        setTinDaGui = function (tn) {
+          this.#tinNhanDaGui = tn;
+        };
+
+        xemPin() {
+          document.write(
+            "Pin " + this.#tenDienThoai + ": " + this.#pin + "<br>"
+          );
+        }
+
+        batDienThoai() {
+          this.#pin--;
+          this.#trangThai = true;
+        }
+
+        tatDienThoai() {
+          this.#trangThai = false;
+        }
+
+        sacPin() {
+          this.#pin = 100;
+        }
+
+        soanTinNhan = function (tn) {
+          this.#pin--;
+          this.#tinNhanDangViet = tn;
+        };
+
+        guiTinNhan = function (tn, mobile) {
+          this.#pin--;
+          mobile.setHopThuDen(tn);
+          mobile.setPin(mobile.getPin());
+          this.#tinNhanDaGui = this.#tinNhanDangViet;
+        };
+
+        xemTinNhanGuiDen = function () {
+          this.#pin--;
+          document.write(
+            this.#tenDienThoai +
+              " vừa nhận 1 tin nhắn: " +
+              this.#hopThuDen +
+              "<br>"
+          );
+        };
+
+        xemTinNhanDaGui = function () {
+          this.#pin--;
+          document.write(
+            "Tin nhắn " + this.#tenDienThoai + " đã gửi: " + this.#tinNhanDaGui
+          );
+        };
+      }
+
+      let iphone = new DienThoai();
+      let samsung = new DienThoai();
+
+      iphone.setTenDienThoai("iphone");
+      iphone.kiemTraTrangThaiDienThoai();
+      iphone.xemPin();
+      iphone.soanTinNhan("hello");
+      iphone.guiTinNhan(iphone.getTinNhanDangViet(), samsung);
+
+      samsung.setTenDienThoai("samsung");
+      samsung.xemTinNhanGuiDen();
+      samsung.xemPin();
+
+      iphone.xemTinNhanDaGui();
+      iphone.xemPin();
+      iphone.sacPin();
+      iphone.xemPin();
+    </script>
+  </body>
+</html>
