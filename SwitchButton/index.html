@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class ElctricLamp {
+        #status = false;
+        getStatus = function () {
+          return this.#status;
+        };
+        turnOff = function () {
+          this.#status = false;
+        };
+        turnOn = function () {
+          this.#status = false;
+        };
+        setStatus = function (status) {
+          this.#status = status;
+        };
+      }
+      class SwitchButton {
+        #status = false;
+        #lamp;
+        connectToLamp(elctricLamp) {
+          this.#lamp = elctricLamp;
+        }
+        switchOff() {
+          this.#lamp.setStatus(false);
+          this.#status = false;
+        }
+        switchOn() {
+          this.#lamp.setStatus(true);
+          this.#status = true;
+        }
+        info() {
+          document.write(
+            "Đèn: " +
+              this.#lamp.getStatus() +
+              "<br>Công tắc: " +
+              this.#status +
+              "<br>"
+          );
+        }
+      }
+
+      let switchButton = new SwitchButton();
+      let elctricLamp = new ElctricLamp();
+      switchButton.connectToLamp(elctricLamp);
+      switchButton.info();
+      for (let i = 0; i < 10; i++) {
+        document.write("<br>Lần " + (i + 1) + "<br>");
+        if (i % 2 == 0) {
+          switchButton.switchOn();
+          switchButton.info();
+        } else {
+          switchButton.switchOff();
+          switchButton.info();
+        }
+      }
+    </script>
+  </body>
+</html>
