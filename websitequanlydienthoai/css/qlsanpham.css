@@ -1,0 +1,51 @@
+body {
+  background-color: #f5f5f5;
+}
+
+/* header */
+header {
+  padding: 10px 100px;
+  background-color: #fa5230;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.wapper {
+  width: 1300px;
+  height: 300px;
+  margin: auto;
+  /* background-color: white; */
+  border-radius: 8px;
+}
+
+table tbody tr td {
+  height: 50px;
+  border: 1px solid;
+  padding: 10px;
+}
+
+table thead tr th {
+  height: 50px;
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+table thead tr td {
+  padding-bottom: 10px;
+}
+
+img {
+  width: 100px;
+}
+
+.inputImg {
+  width: 450px;
+  float: left;
+  margin-right: 30px;
+}
