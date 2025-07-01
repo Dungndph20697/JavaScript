@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Id</th>
+          </tr>
+        </thead>
+        <tbody id="show"></tbody>
+      </table>
+    </div>
+    <script>
+      class Student {
+        #name;
+        #age;
+        #studentId;
+        constructor(name, age, studentId) {
+          this.#name = name;
+          this.#age = age;
+          this.#studentId = studentId;
+        }
+        displayInfo() {
+          let table = `
+                    <tr>
+                        <td>${this.#name}</td>
+                        <td>${this.#age}</td>
+                        <td>${this.#studentId}</td>
+                    </tr>
+                `;
+          let show = document.getElementById("show");
+          show.innerHTML += table;
+        }
+      }
+
+      let student1 = new Student("Dung", 20, 1);
+      let student2 = new Student("Dung2", 24, 2);
+      let student3 = new Student("Dung3", 25, 3);
+
+      student1.displayInfo();
+      student2.displayInfo();
+      student3.displayInfo();
+    </script>
+  </body>
+</html>
