@@ -5,7 +5,7 @@ function show(arr) {
   let tableProduct = document.getElementById("tableProduct");
   if (arr.length <= 0) {
     let listproduct =
-      "<tbody><tr><td colspan='7'>Chưa có sản phẩm nào</td></tr></tbody>";
+      "<tbody><tr><td colspan='7'>No products yet</td></tr></tbody>";
     tableProduct.innerHTML = listproduct;
   } else {
     let listproduct = "<tbody>";
@@ -53,7 +53,24 @@ function fillter() {
   let typeFillter = document.getElementById("typeFillter").value;
   let order = document.getElementById("order").value;
   let arr = JSON.parse(localStorage.getItem("arrProduct"));
+
+  if (search() != null) {
+    arr = search();
+  }
+
   if (typeFillter == "Type" || order == "None") {
+    let result = arr.sort((a, b) => a.type.localeCompare(b.type));
+    show(result);
+  }
+  if (typeFillter == "Type" && order == "Tăng dần") {
+    let result = arr.sort((a, b) => a.type.localeCompare(b.type));
+    show(result);
+  }
+  if (typeFillter == "Type" && order == "Giảm dần") {
+    let result = arr.sort((a, b) => b.type.localeCompare(a.type));
+    show(result);
+  }
+  if (typeFillter == "None" || order == "None") {
     show(arr);
   }
   if (typeFillter == "Name" && order == "Tăng dần") {
@@ -74,11 +91,25 @@ function fillter() {
   }
 }
 
+function fillterBy(type, arr) {
+  let typeFillter = document.getElementById("typeFillter").value;
+  let order = document.getElementById("order").value;
+  if (typeFillter == type && order == "Tăng dần") {
+    let result = arr.sort((a, b) => a.price - b.price);
+    show(result);
+  }
+  if (typeFillter == type && order == "Giảm dần") {
+    let result = arr.sort((a, b) => a.price - b.price);
+    show(result);
+  }
+}
+
 function search() {
   let inputSearch = document.getElementById("inputSearch").value;
   if (inputSearch == "") {
     let arr = JSON.parse(localStorage.getItem("arrProduct"));
     show(arr);
+    return null;
   } else {
     let arr = JSON.parse(localStorage.getItem("arrProduct"));
     let resultSearch = arr.filter(
@@ -88,6 +119,7 @@ function search() {
         e.price.toString().includes(inputSearch.toLowerCase())
     );
     show(resultSearch);
+    return resultSearch;
   }
 }
 
@@ -189,7 +221,8 @@ function updateProduct(id) {
   inputPrice.value = arr[index].price;
   selectType.value = arr[index].type;
   idUpdate = id;
-  console.log(inputImg.value);
+  localStorage.removeItem("arrProduct");
+  localStorage.setItem("arrProduct", JSON.stringify(arr));
 }
 
 function changeImg() {
@@ -216,7 +249,7 @@ function saveProduct() {
     }
     if (validate(inputName, inputPrice, selectType, imgPath) === "OK") {
       let p = new product(
-        generatedId(),
+        arr[findIndexById(idUpdate)].id,
         selectType,
         inputName,
         inputPrice,

@@ -10,7 +10,6 @@ header {
   height: 80px;
 }
 
-
 .logo {
   width: 100px;
 }
@@ -28,6 +27,23 @@ header {
 }
 .tdCart {
   text-align: left;
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+}
+
+#cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 50%;
 }
 
 /* body wapper */
@@ -65,7 +81,7 @@ header {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  /* border-radius: 0 0px 0px 0; */
   user-select: none;
   border: none;
 }
@@ -97,7 +113,7 @@ header {
 
 .content {
   /* width: 1300px; */
-  height: 800px;
+  /* height: 1200px; */
   margin-top: 20px;
   /* padding: 10 10; */
   /* background-color: #fa5230; */
@@ -106,6 +122,7 @@ header {
 /* product */
 .product {
   width: 305px;
+  height: 430px;
   float: left;
   border: 1px solid #cdcdcd;
   margin: 0 10px;
@@ -115,6 +132,10 @@ header {
   padding: 10px;
   background-color: white;
   border-radius: 8px;
+}
+
+.product h3 {
+  height: 20px;
 }
 
 .product img {
@@ -132,4 +153,26 @@ header {
 .price {
   font-weight: normal;
   font-size: 22px;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  top: 30px;
+  right: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
 }
